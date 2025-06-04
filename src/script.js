@@ -23,4 +23,5 @@ function ChangeScreen(ChangeScreen) {
     console.log("invalid screen change");
   }
 }
-  
+
+console.show("hello")
