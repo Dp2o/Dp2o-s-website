@@ -5,3 +5,24 @@ let RocketPower = 0
 // Simulator variables
 const AirFriction = 0.05
 
+// website variables
+let screen = "main"
+let screenlist []
+
+const console = {
+
+  show: function(text) {
+    console.log(text)
+  }
+}
+
+function ChangeScreen(ChangeScreen) {
+  if screenlist.inculdes(ChangeScreen) {
+    screen = ChangeScreen
+  } else {
+    console.show("--screen showed due to error--")
+    console.log("invalid screen change")
+  }
+
+}
+  
