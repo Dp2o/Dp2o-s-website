@@ -6,7 +6,8 @@ let RocketPower = 0;
 const AirFriction = 0.05;
 const GridSpace = {
   
-  
+}
+
 // website variables
 let screen = "main";
 let screenlist = ["main", "PlayScreen"];
