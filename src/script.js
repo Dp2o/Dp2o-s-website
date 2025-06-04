@@ -12,6 +12,9 @@ let screenlist = ["main", "PlayScreen"];
 const console = {
   show: function(text) {
     console.log(text);
+  },
+  log: function(text) {
+    console.log(text)
   }
 }
 
