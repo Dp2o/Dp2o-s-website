@@ -7,7 +7,7 @@ const AirFriction = 0.05
 
 // website variables
 let screen = "main"
-let screenlist = []
+let screenlist = ["main", "PlayScreen"]
 
 const console = {
 
