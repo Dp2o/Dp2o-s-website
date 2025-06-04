@@ -9,22 +9,17 @@ const AirFriction = 0.05;
 let screen = "main";
 let screenlist = ["main", "PlayScreen"];
 
-const console = {
+const Debug = {
   show: function(text) {
     console.log(text);
   },
-  log: function(text) {
-    console.log(text)
-  }
 }
 
 function ChangeScreen(ChangeScreen) {
   if (screenlist.includes(ChangeScreen)) {
     screen = ChangeScreen;
   } else {
-    console.show("--screen showed due to error--");
+    Debug.show("--screen showed due to error--");
     console.log("invalid screen change");
   }
 }
-
-console.show("hello")
