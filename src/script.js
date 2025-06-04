@@ -17,7 +17,7 @@ const console = {
 }
 
 function ChangeScreen(ChangeScreen) {
-  if screenlist.inculdes(ChangeScreen) {
+  if screenlist.includes(ChangeScreen) {
     screen = ChangeScreen
   } else {
     console.show("--screen showed due to error--")
