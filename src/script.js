@@ -35,6 +35,15 @@ function SimLoop() {
   requestAnimationFrame(SimLoop);
 }
 
+function drawGridDots() {
+  ctx.fillStyle = "grey";
+  gridDots.forEach((dot) => {
+    ctx.beginPath();
+    ctx.arc(dot.x, dot.y, 2, 0, Math.PI * 2);
+    ctx.fill();
+  });
+}
+
 function moveGrid() {
   // Move grid dots
   gridDots.forEach((dot) => {
