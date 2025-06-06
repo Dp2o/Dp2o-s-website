@@ -27,12 +27,15 @@ function ChangeScreen(ChangeScreen) {
   }
 }
 
+document.getElementById("DevOnSettingButton").addEventListener("click", simLoop);
+
 function SimLoop() {
+  moveGrid();
   
   requestAnimationFrame(SimLoop);
 }
 
-function moveGridDotsWithKeys() {
+function moveGrid() {
   // Move grid dots
   gridDots.forEach((dot) => {
     dot.x -= AccelerationX;
