@@ -30,12 +30,15 @@ function ChangeScreen(ChangeScreen) {
 document.getElementById("PlayButton").addEventListener("click", SimLoop);
 
 function SimLoop() {
+
+  // grid
+  drawGrid()
   moveGrid();
   
   requestAnimationFrame(SimLoop);
 }
 
-function drawGridDots() {
+function drawGrid() {
   ctx.fillStyle = "grey";
   gridDots.forEach((dot) => {
     ctx.beginPath();
