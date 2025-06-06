@@ -27,7 +27,7 @@ function ChangeScreen(ChangeScreen) {
   }
 }
 
-document.getElementById("DevOnSettingButton").addEventListener("click", simLoop);
+document.getElementById("PlayButton").addEventListener("click", simLoop);
 
 function SimLoop() {
   moveGrid();
