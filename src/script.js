@@ -1,3 +1,7 @@
+document.addEventListener("DOMContentLoaded", function() {
+  document.getElementById("PlayButton").addEventListener("click", SimLoop);
+});
+
 // rocket variables
 let RocketMass = 0;
 let RocketPower = 0;
