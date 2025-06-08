@@ -63,10 +63,4 @@ function moveGrid() {
     if (dot.y > canvas.height) dot.y = 0;
     if (dot.y < 0) dot.y = canvas.height;
   });
-
-  // Move enemies along with the map to make it look like the player is moving
-  enemies.forEach((enemy) => {
-    enemy.y -= AccelerationY; // Move down
-    enemy.x -= AccelerationX; // Move right
-  });
-}
+});
