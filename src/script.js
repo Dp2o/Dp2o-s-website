@@ -1,14 +1,15 @@
+// --- Rocket Simulator Script ---
 
 // --- Rocket variables ---
-let RocketMass = 1000;
-let RocketPower = 20000; 
+let RocketMass = 1000; // in kg, example value
+let RocketPower = 20000; // in Newtons, example value
 
 // --- Physics variables ---
-const AirFriction = 0.05; 
-let RocketVelocity = 0; 
-let RocketAltitude = 0; 
-let RocketFuel = 0; 
-let Gravity = 9.81;
+const AirFriction = 0.05; // Drag coefficient (example value)
+let RocketVelocity = 0;   // m/s
+let RocketAltitude = 0;   // m
+let RocketFuel = 1000;    // kg, example value
+let Gravity = 9.81;       // m/s^2
 
 // --- Canvas/Grid variables ---
 let canvas, ctx;
@@ -48,6 +49,8 @@ document.addEventListener("DOMContentLoaded", function () {
   const playBtn = document.getElementById("PlayButton");
   if (playBtn) {
     playBtn.addEventListener("click", function () {
+      playBtn.style.display = "none";        // Hide the Play button
+      canvas.style.display = "block";        // Show the canvas
       RocketSimLoop();
     });
   } else {
@@ -118,10 +121,25 @@ function drawRocket() {
   // Flip altitude so "higher" goes up the screen
   let rocketY = canvas.height - RocketAltitude * 0.5; // scale altitude to pixels
 
+  // Clamp rocketY to canvas
+  if (rocketY < 40) rocketY = 40;
+  if (rocketY > canvas.height - 40) rocketY = canvas.height - 40;
+
   ctx.fillStyle = "red";
   ctx.fillRect(rocketX - 10, rocketY - 40, 20, 40);
   ctx.fillStyle = "#222";
   ctx.fillRect(rocketX - 6, rocketY - 50, 12, 10);
+
+  // Optional: Draw flame if rocket is thrusting
+  if (RocketFuel > 0) {
+    ctx.fillStyle = "orange";
+    ctx.beginPath();
+    ctx.moveTo(rocketX - 6, rocketY);
+    ctx.lineTo(rocketX + 6, rocketY);
+    ctx.lineTo(rocketX, rocketY + 20 + Math.random()*10);
+    ctx.closePath();
+    ctx.fill();
+  }
 }
 
 function drawHUD() {
